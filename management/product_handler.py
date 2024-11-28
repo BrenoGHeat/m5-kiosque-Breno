@@ -5,8 +5,8 @@ def get_product_by_id(id: int):
     for product in products:
         if product.get("_id") == id:
             return product
-    else:
-        return {}
+
+    return {}
 
 
 def get_products_by_type(string):
@@ -14,7 +14,5 @@ def get_products_by_type(string):
     for product in products:
         if product.get("type") == string:
             products_filter.append(product)
-    if len(products_filter):
-        return products_filter
-    else:
-        return products_filter
+
+    return products_filter
