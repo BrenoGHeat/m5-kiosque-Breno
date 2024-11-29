@@ -16,3 +16,17 @@ def get_products_by_type(string):
             products_filter.append(product)
 
     return products_filter
+
+
+def add_product(menu: list, **kwargs):
+    max_id = 0
+    if len(menu):
+        max_product = max(menu, key=lambda product: product["_id"])
+        max_id = max_product["_id"]
+
+    new_id = max_id + 1
+
+    new_product = {"_id": new_id, **kwargs}
+
+    menu.append(new_product)
+    return new_product
