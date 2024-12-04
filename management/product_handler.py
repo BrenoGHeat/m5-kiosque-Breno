@@ -2,6 +2,8 @@ from menu import products
 
 
 def get_product_by_id(id: int):
+    if not isinstance(id, int):
+        raise TypeError("product id must be an int")
     for product in products:
         if product.get("_id") == id:
             return product
@@ -10,6 +12,8 @@ def get_product_by_id(id: int):
 
 
 def get_products_by_type(string):
+    if not isinstance(string, string):
+        raise TypeError("product type must be a str")
     products_filter = []
     for product in products:
         if product.get("type") == string:
